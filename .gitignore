@@ -1,0 +1,28 @@
+# Dependencies
+vendor/
+bundle/
+.bundle/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby
+.ruby-version
+.ruby-gemset
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.gem
+*.gemspec

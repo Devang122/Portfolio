@@ -1,0 +1,32 @@
+<div class="list__item">
+  <article class="archive__item">
+    {% if post.header.teaser %}
+      <div class="archive__item-teaser">
+        <img src="{{ post.header.teaser | relative_url }}" alt="">
+      </div>
+    {% endif %}
+    
+    <h2 class="archive__item-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+
+    {% if post.excerpt %}
+      <p class="archive__item-excerpt">{{ post.excerpt }}</p>
+    {% endif %}
+
+    {% if post.date %}
+      <p class="archive__item-date">
+        <i class="fa fa-fw fa-calendar"></i>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%B %d, %Y" }}
+        </time>
+      </p>
+    {% endif %}
+
+    {% if post.venue %}
+      <p class="archive__item-venue">
+        <i class="fa fa-fw fa-map-marker"></i> {{ post.venue }}
+      </p>
+    {% endif %}
+  </article>
+</div>

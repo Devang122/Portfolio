@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  {% if page.title %}
+    <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+  {% endif %}
+
+  {% if page.date %}
+    <p class="page__meta">
+      <i class="fa fa-fw fa-calendar"></i> 
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %d, %Y" }}
+      </time>
+    </p>
+  {% endif %}
+
+  {% if page.venue or page.location %}
+    <p class="page__meta">
+      <i class="fa fa-fw fa-map-marker"></i>
+      {% if page.venue %}{{ page.venue }}{% endif %}
+      {% if page.location %}, {{ page.location }}{% endif %}
+    </p>
+  {% endif %}
+
+  <section class="page__content" itemprop="text">
+    {{ content }}
+  </section>
+</article>

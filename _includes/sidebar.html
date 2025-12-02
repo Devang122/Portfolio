@@ -1,0 +1,36 @@
+{% if page.author_profile or layout.author_profile %}
+<div class="sidebar sticky">
+  <div class="author__profile">
+    {% if site.author.avatar %}
+      <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="author__avatar">
+    {% endif %}
+    
+    {% if site.author.name %}
+      <h3 class="author__name">{{ site.author.name }}</h3>
+    {% endif %}
+    
+    {% if site.author.bio %}
+      <p class="author__bio">{{ site.author.bio }}</p>
+    {% endif %}
+    
+    {% if site.author.location %}
+      <p class="author__location"><i class="fas fa-map-marker-alt"></i> {{ site.author.location }}</p>
+    {% endif %}
+  </div>
+  
+  {% if site.author.links %}
+    <nav class="author__urls social-icons">
+      <h4>Connect</h4>
+      <ul>
+        {% for link in site.author.links %}
+          <li>
+            <a href="{{ link.url }}" title="{{ link.label }}">
+              <i class="{{ link.icon }}"></i> {{ link.label }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="archive">
+  {% if page.title %}
+    <h1 class="page__title">{{ page.title }}</h1>
+  {% endif %}
+
+  {{ content }}
+
+  <div class="entries">
+    {% for post in site[page.collection] reversed %}
+      {% include archive-single.html %}
+    {% endfor %}
+  </div>
+</div>

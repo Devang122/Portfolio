@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  {% if page.title %}
+    <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+  {% endif %}
+
+  <section class="page__content" itemprop="text">
+    {{ content }}
+  </section>
+
+  {% if page.paperurl %}
+    <footer class="page__meta">
+      <p>
+        {% if page.citation %}
+          <strong>Recommended citation:</strong> {{ page.citation }}
+        {% endif %}
+        {% if page.paperurl %}
+          <br><a href="{{ page.paperurl }}">Download paper</a>
+        {% endif %}
+      </p>
+    </footer>
+  {% endif %}
+</article>

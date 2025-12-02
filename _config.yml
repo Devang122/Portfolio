@@ -1,0 +1,131 @@
+# Site configuration
+title: "Dr. Ajit Kumar Singh | Academic Researcher"
+subtitle: "Psychology & Wellbeing Research"
+description: "Academic portfolio of Dr. Ajit Kumar Singh - researcher in Psychology, Cognitive Science, and Counseling"
+url: "http://localhost:4000"
+baseurl: ""
+
+# Locale
+locale: "en-US"
+title_separator: "|"
+name: "Dr. Ajit Kumar Singh"
+
+# Site author information
+author:
+  name: "Dr. Ajit Kumar Singh"
+  avatar: "/assets/images/profile-placeholder.svg"
+  bio: "Assistant Professor at AIBAS, Amity University Rajasthan. PhD Scholar specializing in Positive Psychology, Cognitive Psychology, and Research Methodology."
+  location: "Rajasthan, India"
+  employer: "Amity University Rajasthan"
+  email: "ajit.singh@amity.edu"
+  researchgate: "https://www.researchgate.net/profile/Ajit-Singh-44"
+  googlescholar: "https://scholar.google.com/citations?user=your-id"
+  orcid: "https://orcid.org/your-id"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:ajit.singh@amity.edu"
+    - label: "ResearchGate"
+      icon: "fab fa-fw fa-researchgate"
+      url: "https://www.researchgate.net/profile/Ajit-Singh-44"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/"
+    - label: "ORCID"
+      icon: "ai ai-orcid-square ai-fw"
+      url: "https://orcid.org/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/ajitsingh/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/ajitsingh_ph"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+
+# Exclude from processing.
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - .ruby-version
+  - Gemfile
+  - Gemfile.lock
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Paginate
+paginate: 5
+paginate_path: /page:num/
+
+# Site collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+  talks:
+    output: true
+    permalink: /:collection/:path/
+  teaching:
+    output: true
+    permalink: /:collection/:path/
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  
+  # _publications
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: false
+      share: true
+  
+  # _talks
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+      author_profile: false
+  
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+
+# Analytics
+analytics:
+  provider: false
+
+# Comments
+comments:
+  provider: false
